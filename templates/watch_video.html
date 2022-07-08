@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>media player</title>
+ <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+ <link rel = "StyleSheet" href = "{% static './css/explore.css' %}">
+ <link href="//amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+<script src= "//amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+</head>
+ <body>
+    <!-- <video
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="{{video.video_thumbnail.url}}"
+    data-setup="{}"
+    >
+    <source src="{{ video.video_link }}" type="video/mp4" />
+    </video> -->
+    <!-- <div class="Nav"> {% include 'nav.html' %}</div>  -->
+    <center>
+    </br>
+    {% if user.is_authenticated %}
+    <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400" poster="poster.jpg" data-setup='{"techOrder": ["azureHtml5JS", "flashSS", "html5FairPlayHLS","silverlightSS", "html5"], "nativeControlsForTouch": false}'>
+        <source src="{{ video.video_link }}" type="application/vnd.ms-sstr+xml" />
+        <p class="amp-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
+        </p>
+    </video>
+    {% endif %}
+    </br>
+    <!-- {% if user.is_authenticated %}
+    <div class="center">
+
+        <form class="text-center border border-light p-5" action="success" method="POST">
+            {% csrf_token %}
+    
+            <span style="display:inline-block">
+            <!-- <label class="h3 mb-3"> 
+                BUY Movie! </label>--<input type="name" name="name" id="name" required class="form-control mb-4" placeholder="Username">
+            
+        </span>
+            
+    
+           
+            <!-- RAZORPAY INTEGRATION HERE --
+            <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_ZdN5nmxrw5sv50"
+                data-amount="{{video.video_price}}" data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Pay with Razorpay"
+                data-name="Professional Cipher" data-description="Django and Data Science"
+                data-image="https://example.com/your_logo.jpg" data-prefill.name="{{user.username}}" data-prefill.email="{{user.email}}"
+                data-theme.color="#F37254">
+            </script>
+        </form>
+    
+    </div>
+    {% endif %} -->
+    <!-- <a href="{% url 'home' video.video_price %}"><button type="button">Pay and watch</button></a> -->
+    <!-- <a href="https://rzp.io/l/cJOW2kZr0"><button type="button">Pay and watch</button></a> -->
+    <a href="https://rzp.io/l/nkkPtP5etU"><button type="button">Pay and watch</button></a>
+    </br>
+    
+    </center>
+
+    <div class="videos">
+      <section class="video-section">
+          <h2 class="video-section-title">Trailers
+              <!-- <button class="video-section-title-close">&times;</button> -->
+          </h2>
+          {% for video in all_videos %}
+          <article class="video-container">
+              <a href="{% url 'watch_video' video.id %}" class="thumbnail" data-duration="{{ video.video_duration }}">
+                  <img class ="thumbnail-image" src="{{ video.video_thumbnail.url }}">
+                  
+              </a>
+              <div class="video-details">
+                  <a href="" class="video-title">{{video.video_title}}</a>
+                  <a href="" class="video-ratings">{{video.video_rating}}/5</a>
+              </div>
+          </article>
+          {% endfor %}
+      </section>
+  </div>
+  <script>
+    amp.options.flashSS.swf = "//amp.azure.net/libs/amp/latest/techs/StrobeMediaPlayback.2.0.swf"
+    amp.options.silverlightSS.xap = "//amp.azure.net/libs/amp/latest/techs/SmoothStreamingPlayer.xap"
+  </script>
+ <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+ </body>
+<html>

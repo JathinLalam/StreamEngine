@@ -1,0 +1,142 @@
+@import "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css";
+#anchorColor{
+    color :white;
+}
+
+body{
+    margin : 0;
+    padding: 0;;
+    position: relative;
+    margin:  auto;
+    font-family: timesnewroman;
+     background-image: url("/static/images/background.jpg"); 
+    background-position: center;
+    background-size: cover;
+    /* background-size: 1920px 1080px; */
+    background-repeat : no-repeat;
+    height : 100vh;
+    overflow : hidden;
+}
+.center{
+    position : absolute;
+    top: 50%;
+    left : 50%;
+    transform : translate(-50%,-50%); 
+    width : 200px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    background: rgba(255, 255, 255,0.2);
+    backdrop-filter: blur(05px);
+    border-radius: 20px;
+    /*border-width: 0.5px;*/
+    border-top:0.5px solid white;
+    
+    border-bottom: 0.5px solid white;
+    border-left: 0.5px solid white;
+    border-right: 0.5px solid white;
+    background: linear-gradient(135deg, rgba(255, 255, 255,0.45), rgba(255, 255, 255,0.0));
+    /*background: linear-gradient(45deg, #edc0bf 0,#c4caef 58%);*/
+}
+
+.center h1{
+    text-align: center;
+    padding: 35px 0 20px 0;
+    background-image: url("/static/images/user.png");
+    background-position: center;
+    background-size: cover;
+    background-size: 50px 50px; 
+    background-repeat : no-repeat;
+    
+    overflow : hidden;
+}
+
+.center form{
+   box-sizing: border-box;
+}
+
+.txt_field {
+    position: relative;
+   /* border-bottom: 1px solid #adadad;*/
+    /* border-radius: 25px; */
+    margin : 20px 0;
+}
+
+.txt_field input{
+    width :100%;
+    padding: 0 0 0 40px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    height :30px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 25px;
+    
+    border-width: 0.5px;
+    border-top:0.5px solid white;
+    border-bottom: 0.5px solid white;
+    border-left: 0.5px solid white;
+    border-right: 0.5px solid white;
+    }
+
+    .txt_field input:focus{
+        outline: none;
+    
+
+    }
+
+.txt_field label{
+   padding-top: 2px;
+    padding-bottom: 2px;
+    
+}
+
+    .button{
+
+      position: relative;
+        text-align: center;
+        cursor:pointer;
+        display: flex;
+        margin: 0 auto;
+        width: 80px;
+        padding: 5px 15px;
+        margin-top: 30px;
+        
+        /*align:center;*/
+    
+        background: rgba(255, 255, 255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+
+    border-top:0.5px solid white;
+    border-bottom: 0.5px solid white;
+    border-left: 0.5px solid white;
+    border-right: 0.5px solid white;
+    background: linear-gradient(135deg, rgba(255, 255, 255,0.5), rgba(255, 255, 255,0.0));
+       
+    }
+    .signin_link{
+        text-align: center;
+        
+        font-size: small;
+    }
+.Signup_link{
+    text-align: center;
+    font-size: small;
+    
+}
+.Forgotpassword{
+    margin-left:60px;
+}
+
+
+/* .alignment{
+    position: absolute;
+    right: 150px;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+} */

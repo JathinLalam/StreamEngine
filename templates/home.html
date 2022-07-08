@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viweport" content="width=device-width,initial-sale=1.0">
+    <meta http-equiv="x-UA-Compatible"
+    content="ie=edge">
+    <title> explore page </title>
+    <link rel = "StyleSheet" href = "{% static './css/explore.css' %}">
+</head>
+<body>  
+    <header class="header">
+        {% include 'nav.html' %}
+        <a href="#">
+            <img src = "{% static './images/logo.jpg' %}" alt="Stream Engine" class="stream-engine-logo"/>
+        </a>
+        <form class="search-bar">
+            <input class="search-input" type="search" placeholder="Search" aria-label="Serach"/>
+            <button type="submit" class ="search-button">
+                <img src= "{% static './images/search.jpg' %}" id="search" />
+            </button>
+        </form>
+    </header>
+    <div class = "categories">
+        <section class="category-section">
+            <button class = "category active">All</button>
+            <button class = "category">Action</button>
+            <button class = "category">Comedy</button>
+            <button class = "category">Drama</button>
+            <button class = "category">Horror</button>
+            <button class = "category">Romance</button>
+            <button class = "category">Sc-Fi</button>
+            <button class = "category">Thriller</button>
+            <button class = "category">Mystery</button>
+            <button class = "category">Adventure</button>
+            <button class="category"type="logout">Logout</button>
+        </section>
+    </div>
+    <div class="videos">
+        <section class="video-section">
+            <h2 class="video-section-title">Trailers
+                <button class="video-section-title-close">&times;</button>
+            </h2>
+            {% for video in all_videos %}
+            <article class="video-container">
+                <a href="" class="thumbnail" data-duration="1:59">
+                    <img class ="thumbnail-image" src="{{ video.video_thumbnail.url }}">
+                    
+                </a>
+                <div class="video-details">
+                    <a href="" class="video-title">{{video.video_title}}</a>
+                    <a href="" class="video-ratings">{{video.video_rating}}/5</a>
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+    </div>
+
+</body>
+<html>
