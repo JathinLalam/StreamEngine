@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'streamingplatform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangodatabase',
-        'USER': 'dbadmin',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',
+        'NAME': 'sql6504920',
+        'USER': 'sql6504920',
+        'PASSWORD': '9KD2gqdMZi',
+        'HOST': 'sql6.freesqldatabase.com',
         'PORT': '3306',
     }
 }
